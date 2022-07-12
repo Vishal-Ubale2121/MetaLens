@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'ykqh0*t0+4^nx7wq96qnel3j%@*id6233+z58&kl)l8y2)&m+8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Authentication',
+    'Screens',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +121,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
+MEDIA_URL= '/media/'
+
+LOGIN_REDIRECT_URL = 'index'
+HOME_URL = 'index'
+LOGIN_URL = 'login'
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'

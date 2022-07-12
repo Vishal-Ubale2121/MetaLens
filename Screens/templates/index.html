@@ -1,0 +1,83 @@
+{% extends 'base-figma-1.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<link href="static/assets/css/style-figma.css" rel="stylesheet">
+<div class="alt-nav">
+    <div style="position: absolute;
+    left: 11.10%;
+    right: 38.75%;
+    top: 13.80%;
+    bottom: 88.89%;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 28px;
+    /* or 200% */
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #0E88AF;">
+        Basic Details
+    </div>
+    <div style="position: absolute;
+    height: 26px;
+    left: 7.80%;
+    right: 38.75%;
+    top: 40%;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    /* or 117% */
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    /* Typography/On Surface/High Emphasis */
+    color: rgba(39, 41, 54, 0.85);">
+        <a href="#" onclick="history.back()"><img style="margin-right: -5px;" src="static/assets/img/Icon.png"/></a>
+        Company Details
+    </div>
+</div>
+<body style="background: linear-gradient(3.47deg, #590A42 13.28%, #66A9CD 91.28%);
+position: static;
+width: 1240px;
+overflow-x: hidden;
+height: 577px;">
+{% csrf_token %}
+<div class="select-box">
+    <form method="POST" enctype="multipart/form-data" action="screen2">
+        {% csrf_token %}
+        <p style="margin-top:40px; margin-left: 45px; font-family: 'Ubuntu'; font-size: 12px; font-weight: 500;">Company Name *</p>
+        <input style=" padding:10px; width: 250px; height:30px; margin-top: -20px; margin-left: 45px; font-family: 'Ubuntu'; font-size: 12px; font-weight: 400;" type="text" placeholder="Enter Company Name">
+        <p style="margin-left: 335px; font-size: 9px; margin-bottom:-37px; margin-top:22px; font-weight:500; color:#9DD600;">Non-Financial Services*</p>
+        <div style="width: 260px; margin-left: 45px; margin-top: 20px;">
+                <select class="form-select drop-down" name="f3_3" style="height: 45px; font-size: 14px; padding-top:15px;"  onchange="form3_f3()" required>
+                    <option >Not Applicable</option>
+                    <option value="1">Bank</option>
+                    <option value="2">Insurance</option>
+                    <option value="3">Asset Management</option>
+                    <option value="4">Investment Firm</option>
+                </select>
+        </div>
+         <p style="margin-left: 58px; font-size: 9px; font-weight:500; margin-top: -43px; color:#9DD600;">Financial Services*</p>
+        <div style="width: 260px; margin-left: 320px; margin-top: -31px;">
+                <select class="form-select drop-down" style="height: 45px; font-size: 14px; padding-top:15px;" name="f3_3"  onchange="form3_f3()" required>
+                    <option>Not Applicable</option>
+                    <option value="1">Automotive</option>
+                    <option value="2">Manufacturing</option>
+                    <option value="3">FMCG</option>
+                    <option value="4">Not Applicable</option>
+                </select>
+        </div>
+        <div>
+            <img style="margin-left:595px; width: 230px; height: 210px; margin-top: -110px;" src="static/assets/img/esg-index.png"/>
+            <button class="proceed-main-button">Proceed</button>
+        </div>
+        <p style="font-size: 10px; font-family: 'Ubuntu'; margin-left: 40px;">'*' fields are mandatory in this screening sheet</p>
+    </form>
+</div>
+{% endblock %}
+</body>
+
+</html>
