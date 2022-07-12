@@ -1,0 +1,19 @@
+{% extends 'base-figma-1.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<link href="static/assets/css/style-figma.css" rel="stylesheet">
+<body style="background: linear-gradient(3.47deg, #590A42 13.28%, #66A9CD 91.28%);
+position: static;
+width: 1240px;
+height: 577px;">
+<div class="esg-login-box">
+        <p class="esg_title">Log out !</p>
+        <a href="{% url 'login' %}"><button class="esg-logout-button1">Login again</button></a>
+</div >
+{% endblock %}
+</body>
+
+</html>

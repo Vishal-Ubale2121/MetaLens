@@ -1,0 +1,38 @@
+{% extends 'base-figma-1.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<link href="static/assets/css/style-figma.css" rel="stylesheet">
+</div>
+<body style="background: linear-gradient(3.47deg, #590A42 13.28%, #66A9CD 91.28%);
+position: static;
+width: 1240px;
+height: 577px;">
+<div class="login-box">
+    <p class="esg_title">MetaLens</p>
+    <p class="esg_sub_title">Welcome. Please log in to your account.</p>
+    <div class="login-form">
+        <form method="POST">
+            <fieldset class="form-group">
+                {% csrf_token %}
+                <input type="text" placeholder="Username" class="login-text-box-1" name="username" required>
+                <input type="password" placeholder="Password" class="login-text-box-2" name="password" required>
+                <div class="login-radio">
+                    <input type="checkbox" style="height: 20px;"><p style="margin-top: -24px; margin-left: 18px;">Remember Me</p>
+                    <a href="javascript:;" onclick="#">
+                        <div style=" margin-left: 148px; margin-top: -34px;" >
+                            <label>Forgot Passowrd?</label>
+                        </div>
+                    </a>
+                    <a><button class="login-main-button"><b>Login</b></button></a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div >
+{% endblock %}
+</body>
+
+</html>
