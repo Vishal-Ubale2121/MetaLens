@@ -1,0 +1,222 @@
+{% extends 'base-figma-1.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<link href="static/assets/css/style-figma.css" rel="stylesheet">
+<div class="alt-nav">
+    <div style="position: absolute;
+    left: 11.10%;
+    right: 38.75%;
+    top: 13.80%;
+    bottom: 88.89%;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 28px;
+    /* or 200% */
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #0E88AF;">
+        Basic Details
+    </div>
+    <div style="position: absolute;
+    height: 26px;
+    left: 7.80%;
+    right: 38.75%;
+    top: 40%;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    /* or 117% */
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    /* Typography/On Surface/High Emphasis */
+    color: rgba(39, 41, 54, 0.85);">
+        <a href="#" onclick="history.back()"><img style="margin-right: -5px;" src="static/assets/img/Icon.png"/></a>
+        Initial Screen
+    </div>
+</div>
+<body style="background: linear-gradient(3.47deg, #590A42 13.28%, #66A9CD 91.28%);
+position: static;
+width: 1240px;
+overflow-x: hidden;
+height: 1370px;">
+{% csrf_token %}
+<div class="form1-out-box">
+    <table class="table table-bordered table-light" style="font-family: 'Ubuntu'; font-size: 12px; border-color: gray; text-align: center;">
+        <tr>
+            <th scope="col" style="background-color: #CED3CD; width: 60px; text-align: center;">
+                  Sr. No.
+              </th>
+              <th scope="col" style="background-color: #CED3CD; width: 170px; text-align: center;">
+                  Indicator
+              </th>
+              <th scope="col" style="background-color: #CED3CD; width: 320px; text-align: center;">
+                  Question
+              </th>
+              <th scope="col" colspan="4" style="background-color: #CED3CD; width: 400px; text-align: center;">
+                  Scoring Guide
+              </th>
+              <th scope="col" style="background-color: #CED3CD; width: 90px; text-align: center;">
+                    Score
+              </th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Customer demographics</td>
+            <td>In which age group do majority of the banks current borrowers lie?</td>
+            <td>Ages 18-30</td>
+            <td> Ages 30-45</td>
+            <td>Ages 45-60</td>
+            <td>Ages 60+</td>
+            <td>81</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Customer demographics</td>
+            <td>In which age group do majority of the banks current depositors lie?</td>
+            <td>Ages 18-30</td>
+            <td>Ages 30-45</td>
+            <td>Ages 45-60</td>
+            <td>Ages 60+</td>
+            <td>
+                <select class="forms-dropdown-box" name="status" required>
+                    <option value="">Select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                 </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>Customer demographics</td>
+            <td>How much is the percentage of current customers preferring digital banking channels over offline?</td>
+            <td>90% and above</td>
+            <td>60-90%</td>
+            <td>30-60%</td>
+            <td>0-30%</td>
+            <td>81</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>Customer demographics</td>
+            <td>How much is the percentage of loans currently given to customers with non-existent credit scores?</td>
+            <td>90% and above</td>
+            <td>60-90%</td>
+            <td>30-60%</td>
+            <td>0-30%</td>
+            <td>81</td>
+        </tr>
+
+        <tr>
+            <td>5</td>
+            <td>Customer demographics</td>
+            <td>How much is the percentage of loans currently given to customers with poor credit scores?</td>
+            <td>90% and above</td>
+            <td>60-90%</td>
+            <td>30-60%</td>
+            <td>0-30%</td>
+            <td>81</td>
+        </tr>
+
+        <tr>
+            <td>6</td>
+            <td>Customer due diligence</td>
+            <td>How easily can a customer without any prior banking history with the bank get unsecured loans?</td>
+            <td>Very easy, such loans are also highly promoted</td>
+            <td>Easy, but subject to enhanced due diligence</td>
+            <td>Not easy, might need introduction from an existing customer</td>
+            <td>No loans given to customers without a prior banking history with the bank</td>
+            <td>81</td>
+        </tr>
+
+        <tr>
+            <td>7</td>
+            <td>Customer due diligence</td>
+            <td>How much of an important factor is the customer's credit score in determining loan eligibility?</td>
+            <td>Not even considered / checked</td>
+            <td>Considered, but has very low weightage</td>
+            <td>High importance, and a low probability of loan sanction without a valid credit score</td>
+            <td>No loans to users without a credit score</td>
+            <td>81</td>
+        </tr>
+
+        <tr>
+            <td>8</td>
+            <td>Tech stack / Innovation</td>
+            <td>Does the bank currently have any POC's going on in the metaverse / blockchain space?</td>
+            <td>Yes, actively pursuing research, planning to go live with a product in the near future</td>
+            <td>Yes, but no plans to launch a product yet.</td>
+            <td>No research started yet, but planning to start in the near future</td>
+            <td>No research going on currently nor any planned for the near future.</td>
+            <td>81</td>
+        </tr>
+
+        <tr>
+            <td>9</td>
+            <td>Tech stack / Innovation</td>
+            <td>Has the bank developed effective e-KYC mechanisms and controls, including video KYC for customer's remote onboarding?</td>
+            <td>Yes</td>
+            <td>Yes, currently in development</td>
+            <td>Not yet, but planning to develop it in the near future.</td>
+            <td>Not developed currently, no plans to develop in the near future.</td>
+            <td>81</td>
+        </tr>
+
+        <tr>
+            <td>10</td>
+            <td>Tech stack / Innovation</td>
+            <td>Does the bank currently support payments or fund transfers to metaverse wallets?</td>
+            <td>Yes </td>
+            <td>Yes, but only selected payment methods</td>
+            <td>No, but planning to start support in the near future</td>
+            <td>Not supported currently, nor any plans to start support in the near future.</td>
+            <td>81</td>
+        </tr>
+
+        <tr>
+            <td>11</td>
+            <td>Workforce / Culture</td>
+            <td>Are there any employees / teams currently in the bank's workforce who specialize in Blockchain?</td>
+            <td>Yes, also actively hiring blockchain devs</td>
+            <td>Yes, but not actively hiring blockchain devs</td>
+            <td>No, but planning to start hiring in the near future</td>
+            <td>No such teams / employees exist, not planning to hire in the near future</td>
+            <td>81</td>
+        </tr>
+
+        <tr>
+            <td>12</td>
+            <td>Workforce / Culture</td>
+            <td>Does the bank currently have any trade desk that specializes in NFT trading?</td>
+            <td>Yes, a specialized "Web 3.0" trade desk exists.</td>
+            <td>Not yet, but NFT trading is already supported and planning to set one up in the near future.</td>
+            <td>No specialized trade desk yet and no plans to set up one in the near future, but currently being handled by Alternative investments desk.</td>
+            <td>No plans currently, no plans in the near future to set up such a desk.</td>
+            <td>81</td>
+        </tr>
+
+        <tr>
+            <td>13</td>
+            <td>Workforce / Culture</td>
+            <td>Have any knowledge sharing sessions been conducted for NFT or blockchain or metaverse opportunities?</td>
+            <td>Yes, also actively promoting conducting such sessions.</td>
+            <td>Yes, organized voluntarily by employees but not promoted by the bank.</td>
+            <td>No sessions yet, but planning to start in the near future</td>
+            <td>No sessions yet, not even in the pipeline for the near future.</td>
+            <td>81</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
+</body>
+
+</html>

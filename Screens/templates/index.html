@@ -45,36 +45,64 @@ width: 1240px;
 overflow-x: hidden;
 height: 577px;">
 {% csrf_token %}
-<div class="select-box">
-    <form method="POST" enctype="multipart/form-data" action="screen2">
+<div class="index-select-box">
+    <form method="POST" enctype="multipart/form-data" action="index">
         {% csrf_token %}
-        <p style="margin-top:40px; margin-left: 45px; font-family: 'Ubuntu'; font-size: 12px; font-weight: 500;">Company Name *</p>
-        <input style=" padding:10px; width: 250px; height:30px; margin-top: -20px; margin-left: 45px; font-family: 'Ubuntu'; font-size: 12px; font-weight: 400;" type="text" placeholder="Enter Company Name">
-        <p style="margin-left: 335px; font-size: 9px; margin-bottom:-37px; margin-top:22px; font-weight:500; color:#9DD600;">Non-Financial Services*</p>
-        <div style="width: 260px; margin-left: 45px; margin-top: 20px;">
-                <select class="form-select drop-down" name="f3_3" style="height: 45px; font-size: 14px; padding-top:15px;"  onchange="form3_f3()" required>
-                    <option >Not Applicable</option>
-                    <option value="1">Bank</option>
-                    <option value="2">Insurance</option>
-                    <option value="3">Asset Management</option>
-                    <option value="4">Investment Firm</option>
+        <div style="height: 320px; margin-top: 20px; width: 820px; margin-left: 25px;">
+            <p style="width:200px; font-weight: 500; font-family: 'Ubuntu'; font-size: 12px;">
+                Company Name *
+                <input type="text" placeholder="Company name" style="width: 250px; font-size: 12px; margin-top: 8px; height: 27px" required>
+            </p>
+
+            <p style="width:200px; font-weight: 500; margin-top:-5px; font-family: 'Ubuntu'; font-size: 12px;">
+                Industry / Sector *
+                <input type="text" placeholder="Industry" style="width: 250px; font-size: 12px; margin-top: 8px; height: 27px" required>
+            </p>
+
+            <p style="width:200px; font-weight: 500; margin-top:-5px; font-family: 'Ubuntu'; font-size: 12px;">
+                Company Address *
+                <textarea type="text" placeholder="Short Address" style="width: 250px; font-size: 12px; margin-top: 8px; min-height: 70px; max-height: 70px;" required></textarea>
+            </p>
+
+            <p style="width:200px; font-weight: 500; margin-top:-5px; font-family: 'Ubuntu'; font-size: 12px;">
+                Brief project description *
+                <textarea type="text" placeholder="Project Details" style="width: 250px; font-size: 12px; margin-top: 8px; min-height: 70px; max-height: 70px;" required></textarea>
+            </p>
+
+            <p style="width:200px; margin-left: 300px; font-family: 'Ubuntu'; margin-top: -356px; font-weight: 500; font-size: 12px;">
+                Prepared by *
+                <input type="text" placeholder="Prepared by" style="width: 250px; font-size: 12px; margin-top: 8px; height: 27px" required>
+            </p>
+
+            <p style="width:200px; margin-left: 300px; margin-top: -5px; font-weight: 500; font-size: 12px;">
+                Date *
+                <input type="date" placeholder="Date of prepared" style="width: 250px; font-size: 12px; margin-top: 8px; height: 27px" required>
+            </p>
+
+            <p style="width:200px; margin-left: 300px; margin-top: -5px; font-family: 'Ubuntu'; font-weight: 500; font-size: 12px;">
+                Reviewed by *
+                <input type="text" placeholder="Review by" style="width: 250px; font-size: 12px; margin-top: 8px; height: 27px" required>
+            </p>
+
+            <p style="width:200px; margin-left: 300px; margin-top: -5px; font-family: 'Ubuntu'; font-weight: 500; font-size: 12px;">
+                Date *
+                <input type="date" placeholder="Review date" style="width: 250px; font-size: 12px; margin-top: 8px; height: 27px" required>
+            </p>
+
+            <p style="width:200px; margin-left: 300px; font-family: 'Ubuntu'; font-weight: 500; font-size: 12px; margin-top: -4px">
+                Assessment portfolio *
+                <select class="form-select drop-down" style="height: 30px; font-size: 12px; width: 250px; margin-top: 8px;" required>
+                    <option value="1">Savings/Current account portfolio</option>
+                    <option value="2">Loan portfolio</option>
                 </select>
+            </p>
+
+
+            <div style="margin-left: 570px; margin-top:-270px;">
+                <img style="width=250px; height: 250px;" src="static/assets/img/meta-index.png"/>
+            </div>
+                <button class="proceed-index-button" type="submit" style="font-size: 12px;"><b>Proceed</b></button>
         </div>
-         <p style="margin-left: 58px; font-size: 9px; font-weight:500; margin-top: -43px; color:#9DD600;">Financial Services*</p>
-        <div style="width: 260px; margin-left: 320px; margin-top: -31px;">
-                <select class="form-select drop-down" style="height: 45px; font-size: 14px; padding-top:15px;" name="f3_3"  onchange="form3_f3()" required>
-                    <option>Not Applicable</option>
-                    <option value="1">Automotive</option>
-                    <option value="2">Manufacturing</option>
-                    <option value="3">FMCG</option>
-                    <option value="4">Not Applicable</option>
-                </select>
-        </div>
-        <div>
-            <img style="margin-left:595px; width: 230px; height: 210px; margin-top: -110px;" src="static/assets/img/esg-index.png"/>
-            <button class="proceed-main-button">Proceed</button>
-        </div>
-        <p style="font-size: 10px; font-family: 'Ubuntu'; margin-left: 40px;">'*' fields are mandatory in this screening sheet</p>
     </form>
 </div>
 {% endblock %}
