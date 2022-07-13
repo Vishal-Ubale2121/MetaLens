@@ -1664,7 +1664,8 @@ input[type="radio"]{
    font-size: 28px;
    font-weight: 500;
    margin-top: 25px;
-   margin-left: 120px;
+   font-family: 'Ubuntu';
+   margin-left: 108px;
    color: #272936;
 
 }
@@ -1893,7 +1894,120 @@ input[type="radio"]{
   font-weight: 500;
 }
 
+.meta-title{
+    width: 300px;
+    height: 25px;
+    margin-top: 10px;
+    margin-left: 345px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+}
+
+.introduction-out-box{
+    position: absolute;
+    width: 868px;
+    height: 428px;
+    left: 200px;
+    top: 135px;
+    border-radius: 8px;
+
+    background: #FFFFFF;
+    /* Elevation/03 */
+
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
+}
+
+.proceed-intro-button{
+    height: 28px;
+    width: 200px;
+    margin-top: -25px;
+    color: white;
+    margin-left: 340px;
+    border: ridge;
+    font-size: 12px;
+    border-width: thin;
+    border-radius: 4px;
+    font-family: 'Ubuntu';
+    background-color: #590A42;
+}
+
+.index-select-box{
+    position: absolute;
+    width: 868px;
+    height: 390px;
+    left: 200px;
+    top: 150px;
+    border-radius: 8px;
+
+    background: #FFFFFF;
+    /* Elevation/03 */
+
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
+}
+
+.meta-index{
+    height: 240px;
+    width: 140px;
+}
+
+.proceed-index-button{
+    height: 30px;
+    width: 200px;
+    margin-top: -20px;
+    margin-left: 600px;
+    color: white;
+    border: ridge;
+    font-size: 12px
+    font-weight: 500;
+    border-width: thin;
+    border-radius: 4px;
+    background-color: #590A42;
+}
+
+.forms-dropdown-box{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
 
 
+    width: 90px;
+    height: 30px;
+    margin-top: -8px;
+    margin-left: -8px;
+
+    background: #FFFFFF;
+    /* Gray/40 */
+
+    border: 1px solid #DFE3EA;
+    border-radius: 3px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.form1-out-box{
+    position: absolute;
+    width: 1220px;
+    height: 1200px;
+    left: 20px;
+    top: 145px;
+    border-radius: 8px;
+
+    background: #FFFFFF;
+    /* Elevation/03 */
+
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
+}
 

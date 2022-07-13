@@ -424,3 +424,52 @@ input[type="radio"]{
 }
 
 
+.initial-screen-outbox{
+    position: absolute;
+    width: 1215px;
+    height: 1000px;
+    left: 20px;
+    top: 150px;
+
+    background: #FFFFFF;
+    /* Elevation/03 */
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 2px;
+}
+
+.initial-table{
+    position: absolute;
+    margin-left: 5px;
+    padding-top: 10px;
+    width: 1200px;
+}
+
+.initial1-screen-outbox{
+    position: absolute;
+    width: 1215px;
+    height: 1250px;
+    left: 20px;
+    top: 150px;
+
+    background: #FFFFFF;
+    /* Elevation/03 */
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 2px;
+}
+
+
+.screen-button{
+    height: 30px;
+    width: 150px;
+    margin-left: 680px;
+    margin-top: 20px;
+    color: #212121;
+    border: ridge;
+    font-size: 12px;
+    font-weight: 500;
+    border-width: thin;
+    border-radius: 4px;
+    background-color: #9DD600;
+    background-color: #590A42;
+    font-family: 'Ubuntu';
+}

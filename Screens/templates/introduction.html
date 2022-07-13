@@ -1,0 +1,81 @@
+{% extends 'base-figma-1.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<link href="static/assets/css/style-figma.css" rel="stylesheet">
+<div class="alt-nav">
+    <div style="position: absolute;
+    left: 11.10%;
+    right: 38.75%;
+    top: 13.80%;
+    bottom: 88.89%;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 28px;
+    /* or 200% */
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #0E88AF;">
+        Objectives
+    </div>
+    <div style="position: absolute;
+    height: 26px;
+    left: 7.80%;
+    right: 38.75%;
+    top: 40%;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    /* or 117% */
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    /* Typography/On Surface/High Emphasis */
+    color: rgba(39, 41, 54, 0.85);">
+        <a href="#" onclick="history.back()"><img style="margin-right: -5px;" src="static/assets/img/Icon.png"/></a>
+        Introduction
+    </div>
+</div>
+<body style="background: linear-gradient(3.47deg, #590A42 13.28%, #66A9CD 91.28%);
+position: static;
+width: 1240px;
+overflow-x: hidden;
+height: 577px;">
+{% csrf_token %}
+<div class="introduction-out-box">
+    <div>
+        <div style="background-color: #590A42; border-radius: 4px; width: 827px;; margin-top: 15px; height: 30px; margin-left: 20px;">
+            <p style="color: white; margin-left: 320px; font-size: 14px; font-weight: 500; padding:3px; font-family: 'Ubuntu';">Objective of this toolkit</p>
+        </div>
+        <div style="margin-top:10px; margin-left:25px; width: 825px;">
+            <p style="font-size:13px; font-weight: 500; font-family: 'Ubuntu';">This toolkit aims to provide banks and financial institutions with an understanding as to where they currently stand in terms of preparedness to complete the KYC & onboarding of metaverse customers.</p>
+        </div>
+        <div style="background-color: #590A42; border-radius: 4px; width: 827px;; margin-top: -5px; height: 30px; margin-left: 20px;">
+            <p style="color: white; margin-left: 320px; font-size: 14px; font-weight: 500; padding:3px; font-family: 'Ubuntu';">How should this toolkit be used?</p>
+        </div>
+         <div style="margin-top:10px; margin-left:28px; width: 825px;">
+            <dl style="font-size:10px; font-weight: 500; font-family: 'Ubuntu';">
+                <dd style="margin-top: -3px;">Step 1: User should start first with the "Information Sheet" and enter the required information in the appropriate fields.</dd>
+                <dd style="margin-top: -3px;">Step 2: User should specify the portfolio that needs assessment in the "Asessment Portfolio" dropdown.</dd>
+                <dd style="margin-top: -3px;">Step 3: User should then shift to "Initial screening" sheet and answer all the questions there to determine whether they should proceed with this toolkit.</dd>
+                <dd style="margin-top: -3px;">Step 4: If the "Initial screening" sheet concludes that user should proceed with this toolkit, the user should shift to "Assessment Parameters" tab.</dd>
+                <dd style="margin-top: -3px;">Step 5: There are 4 themes in this toolkit, each representing one focus area on which the stakeholder has to evaluate themselves.</dd>
+                <dd style="margin-top: -3px;">Step 6: The "Scoring guide" column in each sheet provides user with guidance on how to come up with the correct response based on their self-evaluation.</dd>
+                <dd style="margin-top: -3px;">Step 7: User should enter their response in the "Score" sheet. For ease of usage, each cell of the "Score" column is locked with the set of all possible correct responses.</dd>
+                <dd style="margin-top: -3px;">Step 8: Based on the scores assigned for each question, an overall score for the specific theme is indicated at the bottom of the sheet.</dd>
+                <dd style="margin-top: -3px;">Step 9: Repeat the same set of actions for remaining 3 themes.</dd>
+                <dd style="margin-top: -3px;">Step 10: After answering all the questions and assigning the scores, user has to move to the "Final score" sheet.</dd>
+                <dd style="margin-top: -3px;">Step 11: The total scores of each of the 4 themes will automatically be fetched and a final score will be calculated.</dd>
+                <dd style="margin-top: -3px;">Step 12: User can check their preparedness level based on the final score they get.</dd>
+            </dl>
+        </div>
+    </div>
+    <a href="{% url 'index' %}"><button class="proceed-intro-button"><b>Proceed</b></button></a>
+</div>
+{% endblock %}
+</body>
+
+</html>
