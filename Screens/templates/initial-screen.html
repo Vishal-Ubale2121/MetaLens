@@ -5,6 +5,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <link href="static/assets/css/style-figma.css" rel="stylesheet">
+<link href="static/assets/css/style-figma-1.css" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+        .container {
+            width: 50%
+        }
+        .d-flex{
+          display: flex;
+           width: 100%;
+        }
+        .d-flex-col{
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+        }
+        .text-center {
+          text-align: left;
+        }
+        .TabButton {
+              width: 100%;
+            color: #5A5A61;
+            border: 0;
+            border-bottom: 1px solid #e0e0e0;
+            background-color: #FFFFFF;
+            margin: 0;
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: normal;
+            padding: 16px;
+            cursor: pointer;
+        }
+        .TabButtonSelected {
+
+            color: #7A1315 !important;
+            border-bottom-color: #C94927 !important;
+            font-weight: 500;
+        }
+
+        .d-chart-n {
+          display: none;
+        }
+
+        .d-chart-show {
+          display: block;
+        }
+    </style>
+<script>
+        window.onload = function display_score(){
+                            console.log('inside display score')
+
+                        }
+
+        function form_change(){
+            var is1_1 = document.forms['screening_form']['is1_1'].value
+            var is1_2 = document.forms['screening_form']['is1_2'].value
+            var is1_3 = document.forms['screening_form']['is1_3'].value
+            var is1_4 = document.forms['screening_form']['is1_4'].value
+            var is1_5 = document.forms['screening_form']['is1_5'].value
+            var is1_6 = document.forms['screening_form']['is1_6'].value
+            var is1_7 = document.forms['screening_form']['is1_7'].value
+            var is1_8 = document.forms['screening_form']['is1_8'].value
+            var is1_9 = document.forms['screening_form']['is1_9'].value
+            var is1_10 = document.forms['screening_form']['is1_10'].value
+            var is1_11 = document.forms['screening_form']['is1_11'].value
+            var is1_12 = document.forms['screening_form']['is1_12'].value
+            var is1_13 = document.forms['screening_form']['is1_13'].value
+
+            console.log('onchange')
+
+            if (is1_1 != '' && is1_2 != '' && is1_3 != '' && is1_4 != '' && is1_5 != '' &&
+             is1_6 != '' && is1_7 != '' && is1_8 != '' && is1_9 != '' && is1_10 != '' && is1_11 != '' &&
+             is1_12 != '' && is1_13 != '')
+             {
+                var is1_total = parseInt(is1_1) + parseInt(is1_2) + parseInt(is1_3) + parseInt(is1_4)
+                + parseInt(is1_5) + parseInt(is1_6) + parseInt(is1_7) + parseInt(is1_8) + parseInt(is1_9)
+                + parseInt(is1_10) + parseInt(is1_11) + parseInt(is1_12) + parseInt(is1_13)
+
+                console.log('inside method')
+
+                var is_avg_score = document.getElementById("is_avg_score")
+                console.log(is1_total)
+                var tot = is1_total/13
+                is_avg_score.innerText = tot.toFixed(2)
+
+                var is1_message = document.getElementById('is1_message')
+
+                if (tot > 2.0){
+                    is1_message.innerText = 'Yes, please proceed !';
+                }
+                else{
+                    is1_message.innerText = 'Please check back next year. Thank you !';
+                }
+
+            }
+
+        }
+
+        function form_change2(){
+            var as1_1 = document.forms['screening_form']['as1_1'].value
+            var as1_2 = document.forms['screening_form']['as1_2'].value
+            var as1_3 = document.forms['screening_form']['as1_3'].value
+            var as1_4 = document.forms['screening_form']['as1_4'].value
+            var as1_5 = document.forms['screening_form']['as1_5'].value
+            var as1_6 = document.forms['screening_form']['as1_6'].value
+            var as1_7 = document.forms['screening_form']['as1_7'].value
+            var as1_8 = document.forms['screening_form']['as1_8'].value
+            var as1_9 = document.forms['screening_form']['as1_9'].value
+            var as1_10 = document.forms['screening_form']['as1_10'].value
+
+            console.log('onchange 2')
+
+            if (as1_1 != '' && as1_2 != '' && as1_3 != '' && as1_4 != '' && as1_5 != '' &&
+             as1_6 != '' && as1_7 != '' && as1_8 != '' && as1_9 != '' && as1_10 != ''){
+                var as1_1_total = parseInt(as1_1) + parseInt(as1_2) + parseInt(as1_3) + parseInt(as1_4)
+                + parseInt(as1_5) + parseInt(as1_6) + parseInt(as1_7) + parseInt(as1_8) + parseInt(as1_9)
+                + parseInt(as1_10)
+
+                var as1_1_avg_score = document.getElementById("as1_1_avg_score")
+                var as1_1_tot_score = document.getElementById("as1_1_tot_score")
+                as1_1_tot_score.innerText = as1_1_total;
+                console.log(as1_1_total)
+                var tot = as1_1_total/10
+                as1_1_avg_score.innerText = tot.toFixed(2)
+             }
+        }
+
+        function form_change3(){
+            var cs1_1 = document.forms['screening_form']['cs1_1'].value
+            var cs1_2 = document.forms['screening_form']['cs1_2'].value
+            var cs1_3 = document.forms['screening_form']['cs1_3'].value
+            var cs1_4 = document.forms['screening_form']['cs1_4'].value
+            var cs1_5 = document.forms['screening_form']['cs1_5'].value
+            var cs1_6 = document.forms['screening_form']['cs1_6'].value
+            var cs1_7 = document.forms['screening_form']['cs1_7'].value
+            var cs1_8 = document.forms['screening_form']['cs1_8'].value
+            var cs1_9 = document.forms['screening_form']['cs1_9'].value
+            var cs1_10 = document.forms['screening_form']['cs1_10'].value
+            var cs1_11 = document.forms['screening_form']['cs1_11'].value
+
+            console.log('onchange 3')
+
+            if (cs1_1 != '' && cs1_2 != '' && cs1_3 != '' && cs1_4 != '' && cs1_5 != '' &&
+                cs1_6 != '' && cs1_7 != '' && cs1_8 != '' && cs1_9 != '' && cs1_10 != '' && cs1_11 != ''){
+                var cs1_1_total = parseInt(cs1_1) + parseInt(cs1_2) + parseInt(cs1_3) + parseInt(cs1_4)
+                + parseInt(cs1_5) + parseInt(cs1_6) + parseInt(cs1_7) + parseInt(cs1_8) + parseInt(cs1_9)
+                + parseInt(cs1_10) + parseInt(cs1_11)
+
+                console.log('all values filled')
+
+                var cs1_1_avg_score = document.getElementById("cs1_1_avg_score")
+                var cs1_1_tot_score = document.getElementById("cs1_1_tot_score")
+                cs1_1_tot_score.innerText = cs1_1_total;
+                console.log(cs1_1_total)
+                var tot = cs1_1_total/11
+                cs1_1_avg_score.innerText = tot.toFixed(2)
+             }
+        }
+
+        function form_change4(){
+            var ks1_1 = document.forms['screening_form']['ks1_1'].value
+            var ks1_2 = document.forms['screening_form']['ks1_2'].value
+            var ks1_3 = document.forms['screening_form']['ks1_3'].value
+            var ks1_4 = document.forms['screening_form']['ks1_4'].value
+            var ks1_5 = document.forms['screening_form']['ks1_5'].value
+            var ks1_6 = document.forms['screening_form']['ks1_6'].value
+            var ks1_7 = document.forms['screening_form']['ks1_7'].value
+            var ks1_8 = document.forms['screening_form']['ks1_8'].value
+            var ks1_9 = document.forms['screening_form']['ks1_9'].value
+            var ks1_10 = document.forms['screening_form']['ks1_10'].value
+            var ks1_11 = document.forms['screening_form']['ks1_11'].value
+            var ks1_12 = document.forms['screening_form']['ks1_12'].value
+            var ks1_13 = document.forms['screening_form']['ks1_13'].value
+            var ks1_14 = document.forms['screening_form']['ks1_14'].value
+
+            console.log('onchange 4')
+
+            if (ks1_1 != '' && ks1_2 != '' && ks1_3 != '' && ks1_4 != '' && ks1_5 != '' &&
+                ks1_6 != '' && ks1_7 != '' && ks1_8 != '' && ks1_9 != '' && ks1_10 != '' && ks1_11 != ''
+                && ks1_12 != '' && ks1_13 != '' && ks1_14 != ''){
+                var ks1_1_total = parseInt(ks1_1) + parseInt(ks1_2) + parseInt(ks1_3) + parseInt(ks1_4)
+                + parseInt(ks1_5) + parseInt(ks1_6) + parseInt(ks1_7) + parseInt(ks1_8) + parseInt(ks1_9)
+                + parseInt(ks1_10) + parseInt(ks1_11) + parseInt(ks1_12) + parseInt(ks1_13) + parseInt(ks1_14)
+
+                console.log('all values filled')
+
+                var ks1_1_avg_score = document.getElementById("ks1_1_avg_score")
+                var ks1_1_tot_score = document.getElementById("ks1_1_tot_score")
+                console.log(ks1_1_total)
+                var tot = ks1_1_total/14
+                cs1_1_avg_score.innerText = tot.toFixed(2)
+             }
+        }
+
+        function activeTab(evt, id) {
+
+           // Get all elements with class="tablinks" and remove the class "active"
+            let tabactive = document.getElementsByClassName("TabButtonSelected");
+            tabactive[0].className = tabactive[0].className.replace(" TabButtonSelected", "");
+
+            document.getElementById(id).style.display = "block";
+            evt.currentTarget.className += " TabButtonSelected";
+
+            displaySection(evt,id)
+        }
+
+        function displaySection(evt, id) {
+
+            let tabactive = document.getElementsByClassName("tab-section");
+            tabactive[0].className = tabactive[0].className.replace(" d-chart-show", "d-chart-n");
+            // add below line of codes
+            [...document.querySelectorAll('div.tab-section')].forEach(item => item.style.display='none')
+            document.getElementById("Section" + id).style.display = "block";
+            evt.currentTarget.className += " d-chart-show";
+
+        }
+    </script>
+
 <div class="alt-nav">
     <div style="position: absolute;
     left: 11.10%;
@@ -19,7 +236,7 @@
     /* or 200% */
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #0E88AF;">
-        Basic Details
+        Savings/Current account portfolio
     </div>
     <div style="position: absolute;
     height: 26px;
@@ -36,185 +253,1446 @@
     /* Typography/On Surface/High Emphasis */
     color: rgba(39, 41, 54, 0.85);">
         <a href="#" onclick="history.back()"><img style="margin-right: -5px;" src="static/assets/img/Icon.png"/></a>
-        Initial Screen
+        Screening
     </div>
 </div>
 <body style="background: linear-gradient(3.47deg, #590A42 13.28%, #66A9CD 91.28%);
 position: static;
-width: 1240px;
+width: 1340px;
 overflow-x: hidden;
-height: 1370px;">
-{% csrf_token %}
-<div class="form1-out-box">
-    <table class="table table-bordered table-light" style="font-family: 'Ubuntu'; font-size: 12px; border-color: gray; text-align: center;">
-        <tr>
-            <th scope="col" style="background-color: #CED3CD; width: 60px; text-align: center;">
-                  Sr. No.
-              </th>
-              <th scope="col" style="background-color: #CED3CD; width: 170px; text-align: center;">
-                  Indicator
-              </th>
-              <th scope="col" style="background-color: #CED3CD; width: 320px; text-align: center;">
-                  Question
-              </th>
-              <th scope="col" colspan="4" style="background-color: #CED3CD; width: 400px; text-align: center;">
-                  Scoring Guide
-              </th>
-              <th scope="col" style="background-color: #CED3CD; width: 90px; text-align: center;">
-                    Score
-              </th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Customer demographics</td>
-            <td>In which age group do majority of the banks current borrowers lie?</td>
-            <td>Ages 18-30</td>
-            <td> Ages 30-45</td>
-            <td>Ages 45-60</td>
-            <td>Ages 60+</td>
-            <td>81</td>
-        </tr>
+height: 4300px;">
 
-        <tr>
-            <td>2</td>
-            <td>Customer demographics</td>
-            <td>In which age group do majority of the banks current depositors lie?</td>
-            <td>Ages 18-30</td>
-            <td>Ages 30-45</td>
-            <td>Ages 45-60</td>
-            <td>Ages 60+</td>
-            <td>
-                <select class="forms-dropdown-box" name="status" required>
-                    <option value="">Select</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                 </select>
-            </td>
-        </tr>
+<div class="rect-meta-1" style="min-height:3600px; overflow-y:scroll;">
+    <form method="POST" enctype="multipart/form-data" action="initial_screen" name="screening_form">
+        {% csrf_token %}
+        <div class="container">
+            <div class="d-flex">
+                <div class="d-flex text-center" style="margin-left: -200px; margin-top: 10px; width:800px;">
+                    <div class="TabButton TabButtonSelected" id="Tab1" style="width:650px; font-size: 12px; font-weight: 500; font-family: 'Ubuntu';" onclick="activeTab(event, 'Tab1')">Initial Screening</div>
+                    <div class="TabButton " id="Tab2" style="width:650px; font-size: 12px; font-weight: 500; font-family: 'Ubuntu';" onclick="activeTab(event, 'Tab2')">Assessment Parameters</div>
+                    <div class="TabButton " id="Tab3" style="width:650px; font-size: 12px; font-weight: 500; font-family: 'Ubuntu';" onclick="activeTab(event, 'Tab3')">Customer Scoring</div>
+                    <div class="TabButton " id="Tab4" style="width:650px;font-size: 12px; font-weight: 500; font-family: 'Ubuntu';" onclick="activeTab(event, 'Tab4')">KYC Risk</div>
+                    <div class="TabButton " id="Tab5" style="width:650px;font-size: 12px; font-weight: 500; font-family: 'Ubuntu';" onclick="activeTab(event, 'Tab5')">Regulatory Transformation</div>
+                </div>
+            </div>
 
-        <tr>
-            <td>3</td>
-            <td>Customer demographics</td>
-            <td>How much is the percentage of current customers preferring digital banking channels over offline?</td>
-            <td>90% and above</td>
-            <td>60-90%</td>
-            <td>30-60%</td>
-            <td>0-30%</td>
-            <td>81</td>
-        </tr>
+            <div class="d-flex-col" style="margin-top: 20px; margin-left: -180px;">
+                <div id="SectionTab1" class="tab-section d-chart-n d-chart-show" onchange="form_change()">
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Customer demographics</b>
+                    <p class="question-width">1. In which age group do majority of the banks current borrowers lie?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio" value="1" name="is1_1">
+                        <label class="label-font">
+                            Ages 60+
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px;" value="2" name="is1_1">
+                        <label class="label-font">
+                            Ages 45-60
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px;" value="3" name="is1_1">
+                        <label class="label-font">
+                            Ages 30-45
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px;" value="4" name="is1_1">
+                        <label class="label-font">
+                            Ages 18-30
+                        </label><br>
+                        <hr style="margin-top: -5px">
+                    </div>
 
-        <tr>
-            <td>4</td>
-            <td>Customer demographics</td>
-            <td>How much is the percentage of loans currently given to customers with non-existent credit scores?</td>
-            <td>90% and above</td>
-            <td>60-90%</td>
-            <td>30-60%</td>
-            <td>0-30%</td>
-            <td>81</td>
-        </tr>
+                    <p class="question-width">2. In which age group do majority of the banks current depositors lie?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="is1_2">
+                        <label class="label-font">
+                            Ages 60+
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px;" value="2" name="is1_2">
+                        <label class="label-font">
+                            Ages 45-60
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px;" value="3" name="is1_2">
+                        <label class="label-font">
+                            Ages 30-45
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px;" value="4" name="is1_2">
+                        <label class="label-font">
+                            Ages 18-30
+                        </label>
+                        <hr style="margin-top: -5px">
+                    </div>
 
-        <tr>
-            <td>5</td>
-            <td>Customer demographics</td>
-            <td>How much is the percentage of loans currently given to customers with poor credit scores?</td>
-            <td>90% and above</td>
-            <td>60-90%</td>
-            <td>30-60%</td>
-            <td>0-30%</td>
-            <td>81</td>
-        </tr>
+                    <p class="question-width">3. How much is the percentage of current customers preferring digital banking channels over offline?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="is1_3">
+                        <label class="label-font">
+                            0-30%
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px;" value="2" name="is1_3">
+                        <label class="label-font">
+                            30-60%
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px;" value="3" name="is1_3">
+                        <label class="label-font">
+                            60-90%
+                        </label ><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px;" value="4" name="is1_3">
+                        <label class="label-font">
+                            90% and above
+                        </label><br>
+                        <hr style="margin-top: -5px">
+                    </div>
 
-        <tr>
-            <td>6</td>
-            <td>Customer due diligence</td>
-            <td>How easily can a customer without any prior banking history with the bank get unsecured loans?</td>
-            <td>Very easy, such loans are also highly promoted</td>
-            <td>Easy, but subject to enhanced due diligence</td>
-            <td>Not easy, might need introduction from an existing customer</td>
-            <td>No loans given to customers without a prior banking history with the bank</td>
-            <td>81</td>
-        </tr>
+                    <p class="question-width">4. How much is the percentage of loans currently given to customers with non-existent credit scores?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="is1_4">
+                        <label class="label-font">
+                            0-30%
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px;" value="2" name="is1_4">
+                        <label class="label-font">
+                            30-60%
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px;" value="3" name="is1_4">
+                        <label class="label-font">
+                            60-90%
+                        </label ><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px;" value="4" name="is1_4">
+                        <label class="label-font">
+                            90% and above
+                        </label>
+                        <hr style="margin-top: -5px">
+                    </div>
 
-        <tr>
-            <td>7</td>
-            <td>Customer due diligence</td>
-            <td>How much of an important factor is the customer's credit score in determining loan eligibility?</td>
-            <td>Not even considered / checked</td>
-            <td>Considered, but has very low weightage</td>
-            <td>High importance, and a low probability of loan sanction without a valid credit score</td>
-            <td>No loans to users without a credit score</td>
-            <td>81</td>
-        </tr>
+                    <p class="question-width">5. How much is the percentage of loans currently given to customers with poor credit scores?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="is1_5">
+                        <label class="label-font">
+                            0-30%
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px;" value="2" name="is1_5">
+                        <label class="label-font">
+                            30-60%
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px;" value="3" name="is1_5">
+                        <label class="label-font">
+                            60-90%
+                        </label ><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px;" value="4" name="is1_5">
+                        <label class="label-font">
+                            90% and above
+                        </label>
+                        <hr style="margin-top: -5px">
+                    </div>
 
-        <tr>
-            <td>8</td>
-            <td>Tech stack / Innovation</td>
-            <td>Does the bank currently have any POC's going on in the metaverse / blockchain space?</td>
-            <td>Yes, actively pursuing research, planning to go live with a product in the near future</td>
-            <td>Yes, but no plans to launch a product yet.</td>
-            <td>No research started yet, but planning to start in the near future</td>
-            <td>No research going on currently nor any planned for the near future.</td>
-            <td>81</td>
-        </tr>
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Customer due diligence</b>
+                    <p class="question-width">6. How much is the percentage of loans currently given to customers with poor credit scores?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="is1_6">
+                        <label class="label-font">
+                            Not possible
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="2" name="is1_6">
+                        <label class="label-font">
+                            Not easy
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="3" name="is1_6">
+                        <label class="label-font">
+                            Easy but not preferred
+                        </label ><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="4" name="is1_6">
+                        <label class="label-font">
+                            Very easy, highly preferred
+                        </label>
+                        <hr style="margin-top: -5px">
+                    </div>
 
-        <tr>
-            <td>9</td>
-            <td>Tech stack / Innovation</td>
-            <td>Has the bank developed effective e-KYC mechanisms and controls, including video KYC for customer's remote onboarding?</td>
-            <td>Yes</td>
-            <td>Yes, currently in development</td>
-            <td>Not yet, but planning to develop it in the near future.</td>
-            <td>Not developed currently, no plans to develop in the near future.</td>
-            <td>81</td>
-        </tr>
+                    <p class="question-width">7. How much is the percentage of loans currently given to customers with poor credit scores?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="is1_7">
+                        <label class="label-font">
+                            No loan without credit score
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="2" name="is1_7">
+                        <label class="label-font">
+                            Very important, high weightage
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="3" name="is1_7">
+                        <label class="label-font">
+                            Considered, but low weightage
+                        </label ><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px"  value="4" name="is1_7">
+                        <label class="label-font">
+                            Not even considered
+                        </label><br>
+                        <hr style="margin-top: -5px">
+                    </div>
 
-        <tr>
-            <td>10</td>
-            <td>Tech stack / Innovation</td>
-            <td>Does the bank currently support payments or fund transfers to metaverse wallets?</td>
-            <td>Yes </td>
-            <td>Yes, but only selected payment methods</td>
-            <td>No, but planning to start support in the near future</td>
-            <td>Not supported currently, nor any plans to start support in the near future.</td>
-            <td>81</td>
-        </tr>
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Tech stack / Innovation</b>
+                    <p class="question-width">8. How much is the percentage of loans currently given to customers with poor credit scores?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="is1_8">
+                        <label class="label-font">
+                            No
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="2" name="is1_8">
+                        <label class="label-font">
+                            Yes, but no POC yet
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="3" name="is1_8">
+                        <label class="label-font">
+                            Yes, POC already started
+                        </label ><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="4" name="is1_8">
+                        <label class="label-font">
+                            Products already launched
+                        </label><br>
+                        <hr style="margin-top: -5px">
+                    </div>
 
-        <tr>
-            <td>11</td>
-            <td>Workforce / Culture</td>
-            <td>Are there any employees / teams currently in the bank's workforce who specialize in Blockchain?</td>
-            <td>Yes, also actively hiring blockchain devs</td>
-            <td>Yes, but not actively hiring blockchain devs</td>
-            <td>No, but planning to start hiring in the near future</td>
-            <td>No such teams / employees exist, not planning to hire in the near future</td>
-            <td>81</td>
-        </tr>
+                    <p class="question-width">9. How much is the percentage of loans currently given to customers with poor credit scores?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="is1_9">
+                        <label class="label-font">
+                            Not developed, won't develop in the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="2" name="is1_9">
+                        <label class="label-font">
+                            Not yet, planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="3" name="is1_9">
+                        <label class="label-font">
+                            Yes, currently in development
+                        </label ><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="4" name="is1_9">
+                        <label class="label-font">
+                            Yes
+                        </label><br>
+                        <hr style="margin-top: -5px">
+                    </div>
 
-        <tr>
-            <td>12</td>
-            <td>Workforce / Culture</td>
-            <td>Does the bank currently have any trade desk that specializes in NFT trading?</td>
-            <td>Yes, a specialized "Web 3.0" trade desk exists.</td>
-            <td>Not yet, but NFT trading is already supported and planning to set one up in the near future.</td>
-            <td>No specialized trade desk yet and no plans to set up one in the near future, but currently being handled by Alternative investments desk.</td>
-            <td>No plans currently, no plans in the near future to set up such a desk.</td>
-            <td>81</td>
-        </tr>
+                    <p class="question-width">10. How much is the percentage of loans currently given to customers with poor credit scores?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="is1_10">
+                        <label class="label-font">
+                            Not supported, won't support in the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="2" name="is1_10">
+                        <label class="label-font">
+                            Not yet, planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="3" name="is1_10">
+                        <label class="label-font">
+                            Yes, but only selected payment methods
+                        </label ><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="4" name="is1_10">
+                        <label class="label-font">
+                            Yes, fully supported
+                        </label><br>
+                        <hr style="margin-top: -5px">
+                    </div>
 
-        <tr>
-            <td>13</td>
-            <td>Workforce / Culture</td>
-            <td>Have any knowledge sharing sessions been conducted for NFT or blockchain or metaverse opportunities?</td>
-            <td>Yes, also actively promoting conducting such sessions.</td>
-            <td>Yes, organized voluntarily by employees but not promoted by the bank.</td>
-            <td>No sessions yet, but planning to start in the near future</td>
-            <td>No sessions yet, not even in the pipeline for the near future.</td>
-            <td>81</td>
-        </tr>
-    </table>
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Workforce / Culture</b>
+                    <p class="question-width">11. How much is the percentage of loans currently given to customers with poor credit scores?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="is1_11">
+                        <label class="label-font">
+                            No, also no future hiring plans
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="2" name="is1_11">
+                        <label class="label-font">
+                            No, but might hire in the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="3" name="is1_11">
+                        <label class="label-font">
+                            Yes, but not actively hiring
+                        </label ><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="4" name="is1_11">
+                        <label class="label-font">
+                            Yes, also actively hiring
+                        </label><br>
+                        <hr style="margin-top: -5px">
+                    </div>
+
+                    <p class="question-width">12. How much is the percentage of loans currently given to customers with poor credit scores?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="is1_12">
+                        <label class="label-font">
+                            Not trading, won't trade in the future.
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="2" name="is1_12">
+                        <label class="label-font">
+                            No, but planning to setup in the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="3" name="is1_12">
+                        <label class="label-font">
+                            No, handled by alternative investments desk
+                        </label ><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="4" name="is1_12">
+                        <label class="label-font">
+                            Yes, through a dedicated Web 3.0 trade desk.
+                        </label><br>
+                        <hr style="margin-top: -5px">
+                    </div>
+
+                    <p class="question-width">13. How much is the percentage of loans currently given to customers with poor credit scores?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio" value="1" name="is1_13">
+                        <label class="label-font">
+                            Not yet, not in the pipeline for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="2" name="is1_13">
+                        <label class="label-font">
+                            No, but planning to conduct in the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="3" name="is1_13">
+                        <label class="label-font">
+                            Yes - organized voluntarily by employees
+                        </label ><br>
+                        <input type="radio" class="question-radio" style="margin-top:-5px" value="4" name="is1_13">
+                        <label class="label-font">
+                            Yes, actively arranging such sessions
+                        </label>
+                        <hr style="margin-top: -5px">
+                    </div>
+
+                    <div style="margin-left:90px; margin-top: 20px;">
+                        <table class="table table-bordered"  style="width:590px; border: 1px solid black; font-size: 12px">
+                            <tbody>
+                            <tr>
+                                <td style="padding-left:30px; font-size:12px; font-weight: 500; font-family: 'Ubuntu';">Average score</td>
+                                <td id="is_avg_score" style="vertical-align: middle; font-weight: 500; font-family: 'Ubuntu'; font-size:12px;  width:280px;" align="center">{{is_avg_score}}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:30px; font-size:12px; font-weight: 500; font-family: 'Ubuntu';">Should the user proceed with this framework?</td>
+                                <td id="is1_message" style="vertical-align: middle; font-weight: 500; font-size:12px; font-family: 'Ubuntu';" align="center"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="SectionTab2" class="tab-section d-chart-n" onchange="form_change2()">
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Compliance</b>
+                    <p class="question-width">1. Is there a "DAO type risk" parameter available specifically for DAOs?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="as1_1">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="as1_1">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="as1_1">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="as1_1">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">2. Is "Metaverse social score" included in your existing KYC risk models?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="as1_2">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="as1_2">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="as1_2">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="as1_2">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">DAO support</b>
+                    <p class="question-width">3. Have assessment parameters been identified for your KYC model to assess the risk of Decentralized Autonomous Organizations, during account opening?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio" value="1" name="as1_3">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="as1_3">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="as1_3">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="as1_3">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Risk Assessment</b>
+                    <p class="question-width">4. Is "Metaverse risk" included in your existing KYC risk models?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="as1_4">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="as1_4">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="as1_4">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="as1_4">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">5. Is 'method of account opening' included as a KYC parameter during account opening?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="as1_5">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="as1_5">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="as1_5">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="as1_5">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Risk Parameters</b>
+                    <p class="question-width">6. Is "metaverse" option included in the 'Method of account opening' parameter?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="as1_6">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="as1_6">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="as1_6">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="as1_6">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">7. How much weightage does "Source of wealth" have in your algorithm-based assessment, out of 100?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="as1_7">
+                        <label>
+                            Not considered for assessment
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="as1_7">
+                        <label>
+                            0-5
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="as1_7">
+                        <label>
+                            6-10
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="as1_7">
+                        <label>
+                            11-15
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">8. Is 'length of relationship' included as a KYC parameter during account opening?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio" value="1" name="as1_8">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="as1_8">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="as1_8">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="as1_8">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">9. Does the "source of wealth" parameter in your KYC model include metaverse sources of wealth as an option, along with an assigned risk score??</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="as1_9">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="as1_9">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="as1_9">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="as1_9">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">10. Does the "Countries of operation" parameter in your KYC model include metaverse as an option, along with an assigned risk score?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="as1_10">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="as1_10">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="as1_10">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="as1_10">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <div style="padding-top:10px; margin-left: 475px; width: 300px;">
+                        <table class="table table-bordered"  style="border: 1px solid black;">
+                            <tbody>
+                            <tr>
+                                <td style="padding-left:30px; font-size:12px; font-weight: 500; font-family: 'Ubuntu';">Total Score</td>
+                                <td id="as1_1_tot_score" style="vertical-align: middle; width:80px; font-size:12px; font-weight: 500; font-family: 'Ubuntu';" align="center">{{as_total_score}}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:30px; font-size:12px; font-weight: 500; font-family: 'Ubuntu';">Average Score</td>
+                                <td id="as1_1_avg_score" style="vertical-align: middle; font-size:12px; font-weight: 500; font-family: 'Ubuntu';" align="center">{{as_avg_score}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="SectionTab3" class="tab-section d-chart-n" onchange="form_change3()">
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Compliance</b>
+                    <p class="question-width">1. Does your KYC scoring account and adjust for the lack of country of residence, country of operation, country of taxation and country of head quarters for a DAO during account opening KYC?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="cs1_1">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="cs1_1">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="cs1_1">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="cs1_1">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">2. Will the customer's different avatars in different metaverses have their own KYC risk scores?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="cs1_2">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="cs1_2">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="cs1_2">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="cs1_2">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">DAO support</b>
+                    <p class="question-width">3. Will DAO's have the 'Industry risk' parameter applicable in your KYC model during account opening?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="cs1_3">
+                        <label>
+                            DAOs not supported currently
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="cs1_3">
+                        <label>
+                            Yes, currently applicable
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="cs1_3">
+                        <label>
+                            Not currently, might include in the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="cs1_3">
+                        <label>
+                            No, DAOs are treated as financial organizations
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">4. Do you conduct KYC assessments and assign KYC scores to DAO founding teams?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="cs1_4">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="cs1_4">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="cs1_4">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="cs1_4">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">5. Do you assign scores to DAO's for the "corporation age" risk assessment by reading smart contracts?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="cs1_5">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="cs1_5">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="cs1_5">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="cs1_5">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">6. Are the assigned risk scores fixed for the different types of DAOs, for the "DAO type risk" parameter?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="cs1_6">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="cs1_6">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="cs1_6">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="cs1_6">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Risk Assessment</b>
+                    <p class="question-width">7. Are the assigned risk scores fixed for the different digital currencies the bank will support, for the "Digital currency risk" parameter?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="cs1_7">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="cs1_7">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="cs1_7">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="cs1_7">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">8. Are the assigned risk scores fixed for the different industries within the metaverse, for the "Industry risk" parameter?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="cs1_8">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="cs1_8">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="cs1_8">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="cs1_8">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">9. Are the assigned risk scores fixed for the different metaverses that the organization plans to expand into, for the "Metaverse risk" parameter?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="cs1_9">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="cs1_9">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="cs1_9">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="cs1_9">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">10. Are Ultimate Beneficial Owners (UBOs) given their own risk assessment score?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="cs1_10">
+                        <label>
+                            Not yet available, no future plans to add
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="cs1_10">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="cs1_10">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="cs1_10">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Risk Parameters</b>
+                    <p class="question-width">11. How much weightage does 'Source of wealth' have in your KYC assessment for account openings, out of 100?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="cs1_11">
+                        <label>
+                            Not considered for assessment
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="cs1_11">
+                        <label>
+                            0-5
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="cs1_11">
+                        <label>
+                            6-10
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="cs1_11">
+                        <label>
+                            11-15
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <div style="padding-top:10px; margin-left: 475px; width: 300px;">
+                        <table class="table table-bordered" style="border: 1px solid black;">
+                            <tbody>
+                            <tr>
+                                <td style="padding-left:30px; font-size:12px; font-weight: 500; font-family: 'Ubuntu';">Total Score</td>
+                                <td id="cs1_1_tot_score" style="vertical-align: middle; width:80px; font-size:12px; font-weight: 500; font-family: 'Ubuntu';" align="center">{{cs_total_score}}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:30px; font-size:12px; font-weight: 500; font-family: 'Ubuntu';">Average Score</td>
+                                <td id="cs1_1_avg_score" style="vertical-align: middle; font-size:12px; font-weight: 500; font-family: 'Ubuntu';" align="center">{{cs_avg_score}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="SectionTab4" class="tab-section d-chart-n" onchange="form_change4()">
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Compliance</b>
+                    <p class="question-width">1. Are your KYC models set up in such a way that there is enough flexibility to include new parameters, as and when required?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="ks1_1">
+                        <label>
+                            Not flexible currently, no plans to make it flexible.
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="ks1_1">
+                        <label>
+                            Not yet, planning to make it flexible
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="ks1_1">
+                        <label>
+                            No, but currently WIP to make it more flexible
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="ks1_1">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">2. Can users manually intervene and escalate individual KYC assessments into Enhanced Due Diligence (EDD) cases based on their judgement?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="ks1_2">
+                        <label>
+                            Not yet supported, no future plans to support
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="ks1_2">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="ks1_2">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="ks1_2">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">3. Is the senior management or board of your organization briefed on a regular basis about updates to the KYC assessment model?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="ks1_3">
+                        <label>
+                            Senior management is not involved in the ownership of the KYC process
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="ks1_3">
+                        <label>
+                            Not yet, will start this process soon
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="ks1_3">
+                        <label>
+                            No, only briefed on an ad-hoc basis
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="ks1_3">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">4. Do any updates to the existing KYC model in your organization need a senior management or board approval, with mandatory approval documentation and time limits for response and closure?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="ks1_4">
+                        <label>
+                            Senior management is not involved in the ownership of the KYC process
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="ks1_4">
+                        <label>
+                            No approval sought from senior management
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="ks1_4">
+                        <label>
+                            Yes, but no documentation or time limits
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="ks1_4">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">5. Can a user manually intervene and change the "Recommend to onboard" flag from Yes to No for an assessment?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="ks1_5">
+                        <label>
+                            Not yet supported, no future plans to support
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="ks1_5">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="ks1_5">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="ks1_5">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">DAO support</b>
+                    <p class="question-width">6. Have DAO's been included as a different form of customer type / entity in your KYC model?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="ks1_6">
+                        <label>
+                            Not yet supported, no future plans to support
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="ks1_6">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="ks1_6">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="ks1_6">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">7. Do you have mechanisms to verify the age of DAO's for corporation age risk assessment by reading smart contracts?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="ks1_7">
+                        <label>
+                            Not yet supported, no future plans to support
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="ks1_7">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="ks1_7">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="ks1_7">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Risk Assessment</b>
+                    <p class="question-width">8. Does your watch list screening include external lists?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="ks1_8">
+                        <label>
+                            Not yet included, no future plans to include
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="ks1_8">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="ks1_8">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="ks1_8">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">9. Is Graph DB used to identify the Ultimate Beneficial Owner of an account?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="ks1_9">
+                        <label>
+                            Not yet supported, no future plans to support
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="ks1_9">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="ks1_9">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="ks1_9">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">10. Is there any provision to screen metaverse customers digital currency wallet for risk assessment before onboarding?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="ks1_10">
+                        <label>
+                            Not yet supported, no future plans to support
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="ks1_10">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="ks1_10">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="ks1_10">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Risk Parameters</b>
+                    <p class="question-width">11. Does your watch list screening include fuzzy name matching mechanisms?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="ks1_11">
+                        <label>
+                            Not yet included, no future plans to include
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="ks1_11">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="ks1_11">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="ks1_11">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">12. Does your watch list screening include screening lists for metaverse usernames?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="ks1_12">
+                        <label>
+                            Not yet included, no future plans to include
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="ks1_12">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="ks1_12">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="ks1_12">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">13. Do you have any mechanism to identify and save the metaverse user ids of Ultimate Beneficial Owner (UBO) of an account using the blockchain?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="ks1_13">
+                        <label>
+                            Not yet supported, no future plans to support
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="ks1_13">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="ks1_13">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="ks1_13">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">14. Do the metaverse user ids of an Ultimate Beneficial Owner (UBO) of an account undergo watch list screening in your current KYC model?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="ks1_14">
+                        <label>
+                            Not yet supported, no future plans to support
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="ks1_14">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="ks1_14">
+                        <label>
+                            No, but a POC is ongoing
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="ks1_14">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <div style="padding-top:10px; margin-left: 475px; width: 300px;">
+                        <table class="table table-bordered" style="border: 1px solid black;">
+                            <tbody>
+                            <tr>
+                                <td style="padding-left:30px; font-size:12px; font-weight: 500; font-family: 'Ubuntu';">Total Score</td>
+                                <td id="ks_total_score" style="vertical-align: middle; width:80px;" align="center">{{ks_total_score}}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:30px; font-size:12px; font-weight: 500; font-family: 'Ubuntu';">Average Score</td>
+                                <td id="ks_avg_score" style="vertical-align: middle;" align="center">{{ks_avg_score}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <div id="SectionTab5" class="tab-section d-chart-n">
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Compliance</b>
+                    <p class="question-width">1. Does your organization scan the blockchain for suspicious transactions, in case a customer has transactions with known metaverse wallets?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="rs1_1">
+                        <label>
+                            Transactions with metaverse wallets not supported, so no question of monitoring
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="rs1_1">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="rs1_1">
+                        <label>
+                            No, but already supported if mandated in the future by regulatory authorities
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="rs1_1">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">2. Are transactions by non-metaverse customers with known metaverse wallets treated as suspicious transactions? Also, are they reported to regulatory authorities?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="rs1_2">
+                        <label>
+                            Yes, and they are regularly reported to regulatory authorities
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="rs1_2">
+                        <label>
+                            Yes, but not reported to regulatory authorities yet
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="rs1_2">
+                        <label>
+                            No, but planning to flag such transactions in the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="rs1_2">
+                        <label>
+                            No
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">3. Does your organization have any history of being penalized by regulatory authorities for non-compliance with KYC and customer onboarding norms in the last 5 to 10 years?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="rs1_3">
+                        <label>
+                            Yes
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="rs1_3">
+                        <label>
+                            Yes, but currently under dispute in a court of law
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="rs1_3">
+                        <label>
+                            Not in the last 5 years
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="rs1_3">
+                        <label>
+                            Not in the last 10 years
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Customer re-review</b>
+                    <p class="question-width">4. Will a customer undergo an accelerated re-review of their KYC score, if they go online in a new metaverse?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="rs1_4">
+                        <label>
+                            Not needed
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="rs1_4">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="rs1_4">
+                        <label>
+                            Yes, but needs to be manually requested by user
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="rs1_4">
+                        <label>
+                            Yes, will automatically happen
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">5. If the AML systems of your organization flag a suspicious transaction on the blockchain made by a customer, does an accelerated rereview happen of the customer's KYC risk score?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="rs1_5">
+                        <label>
+                            Not needed
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="rs1_5">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="rs1_5">
+                        <label>
+                            Yes, but needs to be manually requested by user
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="rs1_5">
+                        <label>
+                            Yes, will automatically happen
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">6. Are DAO's subjected to an accelerated rereview of their KYC score, if any changes to their smart contracts are reported?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="rs1_6">
+                        <label>
+                            Not needed
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="rs1_6">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="rs1_6">
+                        <label>
+                            Yes, but needs to be manually requested by user
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="rs1_6">
+                        <label>
+                            Yes, will automatically happen
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">7. Will a customer undergo an accelerated rereview of their KYC score, if any changes to the UBO (Ultimate Beneficial Owner) is detected?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="rs1_7">
+                        <label>
+                            Not needed
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="rs1_7">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="rs1_7">
+                        <label>
+                            Yes, but needs to be manually requested by user
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="rs1_7">
+                        <label>
+                            Yes, will automatically happen
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Regulatory Reporting</b>
+                    <p class="question-width">8. Has your organization sought any clarification from regulatory authorities with regards to KYC for metaverse customers? And have the regulatory authorities responded?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="rs1_8">
+                        <label>
+                            Not sought, no plans to seek clarifications in the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="rs1_8">
+                        <label>
+                            No, but planning to approach regulatory authorities soon
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="rs1_8">
+                        <label>
+                            Yes, but yet to get a response
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="rs1_8">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">9. Does your organization report any suspicious findings on the blockchain during KYC assessment to the regulatory authorities / tax agencies, in case a customer has a transaction history with known metaverse wallets?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="rs1_9">
+                        <label>
+                            Transactions with metaverse wallets not supported, so no question of reporting.
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="rs1_9">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="rs1_9">
+                        <label>
+                            No, but already supported if mandated in the future by regulatory authorities
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="rs1_9">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">10. Does your organization report non-metaverse customer's transactions with known metaverse wallets to regulatory authorities / tax agencies?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="rs1_10">
+                        <label>
+                            Transactions with metaverse wallets not supported, so no question of reporting
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="rs1_10">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="rs1_10">
+                        <label>
+                            No, but already supported if mandated in the future by regulatory authorities
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="rs1_10">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">11. Are suspicious findings in the KYC of DAOs reported to the regulatory authorities?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="rs1_11">
+                        <label>
+                            DAO's not supported currently, so no question of reporting
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="rs1_11">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="rs1_11">
+                        <label>
+                            No, but already supported if mandated in the future by regulatory authorities
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="rs1_11">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">12. Does your organization report metaverse customers as suspicious to regulatory authorities / tax agencies, if they declare their source of income as metaverse gambling?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="rs1_12">
+                        <label>
+                            No business allowed with gambling income customers
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="rs1_12">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="rs1_12">
+                        <label>
+                            No, but already supported if mandated in the future by regulatory authorities
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="rs1_12">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <b style="margin-top:-10px; color: #9E4780; font-family: 'Ubuntu';">Risk Assessment</b>
+                    <p class="question-width">13. Are non-metaverse customers who transact with known metaverse wallets escalated for advanced due diligence measures during the KYC process?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="rs1_13">
+                        <label>
+                            Transactions with metaverse wallets not supported, so no question of reporting
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="rs1_13">
+                        <label>
+                            Yes
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="rs1_13">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="rs1_13">
+                        <label>
+                            No
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <p class="question-width">14. Do you have any current policies to identify the Ultimate Beneficial Owner (UBO) of a DAO?</p>
+                    <div class="question-box">
+                        <input type="radio" class="question-radio"  value="1" name="rs1_14">
+                        <label>
+                            DAO's not supported currently, so no question of reporting
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="2" name="rs1_14">
+                        <label>
+                            Not yet, POC planned for the future
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="3" name="rs1_14">
+                        <label>
+                            No, but already supported if mandated in the future by regulatory authorities
+                        </label><br>
+                        <input type="radio" class="question-radio" style="margin-top: -5px;" value="4" name="rs1_14">
+                        <label>
+                            Yes
+                        </label><br>
+                        <hr style="margin-top:5px;">
+                    </div>
+
+                    <div style="padding-top:10px; margin-left: 475px; width: 300px;">
+                        <table class="table table-bordered" style="border: 1px solid black;">
+                            <tbody>
+                            <tr>
+                                <td style="padding-left:30px; font-size:12px; font-weight: 500; font-family: 'Ubuntu';">Total Score</td>
+                                <td id="rs_total_score" style="vertical-align: middle; width:80px;" align="center">{{rs_total_score}}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:30px; font-size:12px; font-weight: 500; font-family: 'Ubuntu';">Average Score</td>
+                                <td id="rs_avg_score" style="vertical-align: middle;" align="center">{{rs_avg_score}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="margin-left:-50px; margin-top: -15px;">
+                        <button class="screen-button"><a style="color:white;">Result</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 20px">
+
+        </div>
+    </form>
 </div>
 {% endblock %}
 </body>

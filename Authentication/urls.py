@@ -9,5 +9,8 @@ urlpatterns = [
     path('logout', auth_views.logout_user, name='logout'),
     path('introduction', screen_views.introduction, name='introduction'),
     path('index', screen_views.index, name='index'),
-    path('initial-screen', screen_views.initial_screen, name='initial-screen'),
+    path('initial_screen', screen_views.initial_screen, name='initial_screen'),
+    path('final_score', screen_views.final_score, name='final_score'),
+    path('temp', screen_views.temp, name='temp'),
+
 ]
