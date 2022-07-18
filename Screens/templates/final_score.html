@@ -1,0 +1,152 @@
+{% extends 'base-figma-1.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<link href="static/assets/css/style-figma.css" rel="stylesheet">
+<link href="static/assets/css/style-figma-1.css" rel="stylesheet">
+
+<script>
+    window.onload = function(){
+                    console.log('Inside Function')
+                    var screen1 = document.getElementById('assessment-parameters-id')
+                    var screen2 = document.getElementById('customer-scoring-id')
+                    var screen3 = document.getElementById('kyc-risk-id')
+                    var screen4 = document.getElementById('regulatory-transformation-id')
+                    var screen5 = document.getElementById('final-score')
+
+                    if (screen1.value > '2'){
+                        screen1.style.backgroundColor = 'red';
+                    }
+                    else{
+                        screen1.style.backgroundColor = 'green';
+                    }
+
+                    if (screen2.value > '2'){
+                        screen1.style.backgroundColor = 'red';
+                    }
+                    else{
+                        screen2.style.backgroundColor = 'green';
+                    }
+
+                    if (screen3.value > '2'){
+                        screen1.style.backgroundColor = 'red';
+                    }
+                    else{
+                        screen3.style.backgroundColor = 'green';
+                    }
+
+                    if (screen4.value > '2'){
+                        screen1.style.backgroundColor = 'red';
+                    }
+                    else{
+                        screen4.style.backgroundColor = 'green';
+                    }
+
+                    if (screen5.value > '2'){
+                        screen1.style.backgroundColor = 'red';
+                    }
+                    else{
+                        screen5.style.backgroundColor = 'green';
+                    }
+
+
+    }
+</script>
+
+
+<div class="alt-nav">
+    <div style="position: absolute;
+    left: 11.10%;
+    right: 38.75%;
+    top: 13.80%;
+    bottom: 88.89%;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 28px;
+    /* or 200% */
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #0E88AF;">
+        Scores
+    </div>
+    <div style="position: absolute;
+    height: 26px;
+    left: 7.80%;
+    right: 38.75%;
+    top: 40%;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    /* or 117% */
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    /* Typography/On Surface/High Emphasis */
+    color: rgba(39, 41, 54, 0.85);">
+        <a href="#" onclick="history.back()"><img style="margin-right: -5px;" src="static/assets/img/Icon.png"/></a>
+        Final Score
+    </div>
+</div>
+<body style="background: linear-gradient(3.47deg, #590A42 13.28%, #66A9CD 91.28%);
+position: static;
+width: 1240px;
+overflow-x: hidden;
+height: 577px;">
+{% csrf_token %}
+    <div style="margin-top: 120px; width: 500px; margin-left: 130px; float: left; ">
+        <p style="font-size:20px; margin-left: 160px; font-family: 'Ubuntu'; font-weight: 500; color: white;">Section Wise Scores</p>
+        <table class="table table-bordered" style="border-color: white;">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col" style="background-color: rgba(245, 245, 248, 0.3); color: white; text-align: center;">Theme</th>
+              <th scope="col" style="background-color: rgba(245, 245, 248, 0.3); color: white; text-align: center;">Score</th>
+            </tr>
+          </thead>
+          <tbody>
+                <tr>
+                  <td style="color:white;">Assessment parameters</td>
+                  <td style="color:white; text-align: center;">{{as_avg_score}}</td>
+                </tr>
+                <tr>
+                  <td style="color:white;">Customer Scoring</td>
+                  <td style="color:white; text-align: center;">{{cs_avg_score}}</td>
+                </tr>
+                <tr>
+                  <td style="color:white;">Kyc Risk</td>
+                  <td style="color:white; text-align: center;">{{ks_avg_score}}</td>
+                </tr>
+              <tr>
+                  <td style="color:white;">Regulatory Transformation</td>
+                  <td style="color:white; text-align: center;">{{rs_avg_score}}</td>
+                </tr>
+              <tr>
+                  <td style="background-color: rgba(245, 245, 248, 0.3); color: white;"><b>Final Average score</b></td>
+                  <td  style="background-color: rgba(245, 245, 248, 0.3); color: white; text-align: center;">{{total_avg}}</td>
+              </tr>
+          </tbody>
+        </table>
+        <div style="width: 400px; font-size: 20px; margin-left: 700px; margin-top: -310px; font-family: 'Ubuntu'; font-weight: 500; color: white;">
+            Final Suggestion
+        </div>
+        <div style="width: 450px; height: 250px; background-color: rgba(245, 245, 248, 0.3); margin-left: 550px; margin-top: 15px;">
+            <p id="suggestion-1" style="padding: 55px; width: 450px; font-weight: 500; font-size: 16px; color: #F4F3FA; font-family: 'Ubuntu';">
+               The organization needs to improve on several aspects in terms of its preparedness to expand into the metaverse. It can look into creating a vision or a roadmap first to kick start its readiness.
+            </p>
+            <p id="suggestion-2" style="padding: 50px; width: 450px; font-weight: 500; font-size: 16px; color: black; font-family: 'Ubuntu'; display: none;">
+               The organization needs to improve on several aspects in terms of its preparedness to expand into the metaverse. It can look into creating a vision or a roadmap first to kick start its readiness.
+            </p>
+            <p id="suggestion-3" style="padding: 50px; width: 450px; font-weight: 500; font-size: 16px; color: black; font-family: 'Ubuntu'; display: none;">
+               The organization needs to improve on several aspects in terms of its preparedness to expand into the metaverse. It can look into creating a vision or a roadmap first to kick start its readiness.
+            </p>
+            <p id="suggestion-4" style="padding: 50px; width: 450px; font-weight: 500; font-size: 16px; color: black; font-family: 'Ubuntu'; display: none;">
+               The organization needs to improve on several aspects in terms of its preparedness to expand into the metaverse. It can look into creating a vision or a roadmap first to kick start its readiness.
+            </p>
+        </div>
+    </div>
+{% endblock %}
+</body>
+
+</html>

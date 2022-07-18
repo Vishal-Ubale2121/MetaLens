@@ -344,7 +344,8 @@ input[type="radio"]{
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    width: 600px;
+    font-size: 14px;
     line-height: 24px;
     margin-top: 2%;
     /* or 150% */
@@ -2011,3 +2012,58 @@ input[type="radio"]{
     border-radius: 8px;
 }
 
+.init-screen-button{
+    height: 30px;
+    width: 180px;
+    color: white;
+    border: ridge;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 585px;
+    border-width: thin;
+    border-radius: 4px;
+    background-color: #590A42;
+}
+
+.rect-meta-1{
+    position: absolute;
+    width: 70%;
+    height: 60%;
+    left: 12.5%;
+    top: 27%;
+
+    background: #FFFFFF;
+    /* Elevation/03 */
+
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
+}
+
+.question-width{
+    width: 650px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 10px;
+    font-family: 'Ubuntu';
+}
+
+.radio-button{
+    height: 20px;
+}
+
+.question-box{
+    margin-top: -25px;
+    margin-left: -25px;
+    font-size: 12px;
+    width: 800px;
+}
+
+.question-radio{
+    height: 10px;
+}
+
+.label-font{
+    font-family: 'Ubuntu';
+    font-weight: 400;
+    font-size: 13px;
+}
